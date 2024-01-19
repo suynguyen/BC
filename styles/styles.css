@@ -42,6 +42,11 @@ body {
   margin: 20px;
 }
 
+.tel-tag,
+.mail-tag {
+  color: #fff;
+}
+
 .separator-line {
   height: 0.5px;
   background-color: #fff;
