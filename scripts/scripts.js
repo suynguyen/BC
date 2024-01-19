@@ -14,3 +14,23 @@ buttons.forEach((button) => {
     delete activeSlide.dataset.active;
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const images = document.querySelectorAll('.img-entry');
+  let currentIndex = 0;
+
+  setInterval(function () {
+    images[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % images.length;
+    images[currentIndex].classList.add('active');
+  }, 5000); // Change image every 5 seconds (adjust as needed)
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const textOverlay = document.querySelector('.text-overlay');
+
+  // Add the 'show' class after a delay (e.g., 2 seconds)
+  setTimeout(function () {
+    textOverlay.classList.add('show');
+  }, 5000);
+});

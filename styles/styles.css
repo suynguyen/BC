@@ -47,6 +47,44 @@ body {
   color: #fff;
 }
 
+.image-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.img-entry {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  transition: transform 5s ease-in-out, opacity 2s ease-in-out;
+  opacity: 0;
+}
+
+.img-entry.active {
+  transform: scale(1.2); /* Slightly zoom in */
+  opacity: 1;
+}
+
+.text-overlay {
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  font-size: xx-large;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  transform: translate(-50%, 150%);
+  text-align: center;
+  opacity: 0; /* Start with opacity 0 */
+  transition: transform 4s ease-in-out, opacity 4s ease-in-out; /* Add transitions for transform and opacity */
+}
+
+.text-overlay.show {
+  transform: translate(-50%, 0); /* Move up to its original position */
+  opacity: 1; /* Make the text visible */
+}
+
 .separator-line {
   height: 0.5px;
   background-color: #fff;
